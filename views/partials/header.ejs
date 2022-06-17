@@ -4,13 +4,13 @@
 <head>
   <title>The Education Collective</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-   <!-- <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
    <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;500;700&family=Kalam:wght@700&display=swap"
-    rel="stylesheet">-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!--login icon-->
-  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">  all styling -->
-  <link rel="stylesheet" href="stylesheets/style.css" /> <!-- our styling -->
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css" /> 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="js/main.js"></script>
@@ -23,8 +23,8 @@
 
   <div class="navbar-fixed">
     <nav>
-      <div id="nav-mobile" class="nav-wrapper">
-        <a href="/"><img src="../../logo.png" class="brand-logo center" alt="TEC" width="120px" height="90%"></a>
+      <div id="nav-mobile" class="nav-wrapper indigo darken-4">
+        <a href="/" class="brand-logo center"><img src="../../images/logo.png" alt="TEC" width="120px" height="90%"></a> <!--FIXME-->
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
                 <% if (user) { %>
@@ -35,7 +35,7 @@
               </li>
         </ul>
         <ul class="left hide-on-med-and-down">
-          <li><a href="/">Home</a></li>
+          <li><a href="/"><i class="material-icons left">home</i></a></li>
         </ul>
       </div>
     </nav>
