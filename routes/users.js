@@ -3,6 +3,10 @@ const usersCtrl = require('../controllers/users');
 const user = require('../models/user');
 
 router.get('/users', usersCtrl.index);
+router.get('/about', usersCtrl.about);
+router.get('/contact', usersCtrl.contact);
+
+
 
 
 function isLoggedIn(req, res, next){

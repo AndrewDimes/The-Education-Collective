@@ -5,8 +5,7 @@ const userSchema = new mongoose.Schema({
     avatar: String,
     email: String,
     googleId: String,
-    review: {type: mongoose.Schema.Types.ObjectId, ref: 'Review'},
-    cart: {type: mongoose.Schema.Types.ObjectId, ref: 'Cart'}
+    resource: {type: mongoose.Schema.Types.ObjectId, ref: 'Resource'},
   }, {
     timestamps: true
   });
