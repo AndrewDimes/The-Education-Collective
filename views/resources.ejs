@@ -2,8 +2,9 @@
   <main>
 
     <% if(user) { %>
-        <div class="container">     
+        <div class="container">    
           <h2 id="diffFont" class="center">Add Resource</h2>
+          <h5 class="center">If you have a free online resource to help students <br> learn new skills please add them to this list</h5> 
           <form style="margin-left:100px; margin-right:100px" method="POST" action="/resources/post">
             <label>Description</label>
             <textarea name="description"></textarea>
@@ -16,13 +17,17 @@
             </div>
           </form><br>
       <% } else { %>
-        <p id="diffFont" class="center"> <a href="/auth/google">Log in</a> to add a resource</p>
+        <h2 id="diffFont" class="center">Add Resource</h2>
+        <h5 class="center">If you have a free online resource to help students <br> learn new skills please add them to this list</h5>
+        <h5 id="diffFont" class="center"> <a href="/auth/google">Log in</a> to add a resource</h5>
         <% } %>
         </div>     
 
 
 <h2 class="center">Recent Resources</h2>
-<div class="container">
+<h5 class="center">This list is full of excellent learning resources to help students <br> learn meaningful skills and are all 100% free </h5>
+<br>
+<div id="resources" class="container">
   <div class="col s12" class="form" style="margin-left:100px; margin-right:100px">
     <%resources.forEach(function(resource) {%>
       <ul class="collection">
@@ -44,6 +49,7 @@
       <%});%>
     </div>
 </div>
+<br>
   
   </main>
 
