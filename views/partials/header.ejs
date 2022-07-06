@@ -15,7 +15,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="js/main.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="images/glass.png" />
   
 </head>
 
@@ -24,7 +23,7 @@
   <div class="navbar-fixed">
     <nav>
       <div id="nav-mobile" class="nav-wrapper indigo darken-4">
-        <a href="/" class="brand-logo center"><img src="../../images/logo.png" alt="TEC" width="120px" height="90%"></a> <!--FIXME-->
+        <a href="/"><img src="images/logo.png" id="logo" class="brand-logo center" alt="TEC" width="400px" height="100%"></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
                 <% if (user) { %>
@@ -35,7 +34,10 @@
               </li>
         </ul>
         <ul class="left hide-on-med-and-down">
-          <li><a href="/"><i class="material-icons left">home</i></a></li>
+          <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+          <li><a href="/resources"><i class="material-icons left">public</i>Resources</a></li>
+          <li><a href="/about"><i class="material-icons left">person_pin</i>About Us</a></li>
+          <li><a href="/contact"><i class="material-icons left">message</i>Contact Us</a></li>
         </ul>
       </div>
     </nav>
@@ -43,6 +45,9 @@
 
   <ul class="sidenav" id="mobile-demo">
     <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+    <li><a href="/resources"><i class="material-icons left">public</i>Resources</a></li>
+    <li><a href="/about"><i class="material-icons left">person_pin</i>About Us</a></li>
+    <li><a href="/contact"><i class="material-icons left">message</i>Contact Us</a></li>
         <li>
           <% if (user) { %>
             <a href="/logout"><i class="material-icons left">person</i>Log Out</a>

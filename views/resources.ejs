@@ -1,0 +1,56 @@
+<%- include('./partials/header') %>
+  <main>
+
+    <% if(user) { %>
+        <div class="container">    
+          <h2 id="diffFont" class="center">Add Resource</h2>
+          <h5 class="center">If you have a free online resource to help students <br> learn new skills please add them to this list</h5> 
+          <form style="margin-left:100px; margin-right:100px" method="POST" action="/resources/post">
+            <label>Description</label>
+            <textarea name="description"></textarea>
+            <label>Link</label>
+            <textarea name="link"></textarea>
+            <div class="center">
+              <button  class="btn waves-effect waves-light black" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </form><br>
+      <% } else { %>
+        <h2 id="diffFont" class="center">Add Resource</h2>
+        <h5 class="center">If you have a free online resource to help students <br> learn new skills please add them to this list</h5>
+        <h5 id="diffFont" class="center"> <a href="/auth/google">Log in</a> to add a resource</h5>
+        <% } %>
+        </div>     
+
+
+<h2 class="center">Recent Resources</h2>
+<h5 class="center">This list is full of excellent learning resources to help students <br> learn meaningful skills and are all 100% free </h5>
+<br>
+<div id="resources" class="container">
+  <div class="col s12" class="form" style="margin-left:100px; margin-right:100px">
+    <%resources.forEach(function(resource) {%>
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="<%=resource.avatar%>" alt="" class="circle">
+          <span class="title"><%=resource.description%></span>
+          <p><a target="_blank" href="http://<%=resource.link%>"><%=resource.link%></a> <br>
+            Posted by <%=resource.name %>
+          </p>
+          <% if(user) { %>
+            <%if(userId.equals(resource.user)){ %>
+              <form id="myform" name="myform" style="width: 100px" action="/resources/<%=resource._id%>?_method=DELETE" method="POST">
+                <a  onclick="document.getElementById('myform').submit(); return false;" href="javascript: {}" style="color:red" class="secondary-content">delete resource</a>
+              </form>
+              <% } %>
+                <% }%></a>      
+        </li>
+      </ul>  
+      <%});%>
+    </div>
+</div>
+<br>
+  
+  </main>
+
+  <%- include('./partials/footer') %>
